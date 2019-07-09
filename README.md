@@ -10,8 +10,6 @@ The I2C interface is disabled by default so you need to enable it. You can do th
 
 `sudo raspi-config`
 
-For additional details on this step please see my how to Enable the I2C Interface on the Raspberry Pi post.
-
 The following libraries may already be installed but run these commands anyway to make sure :
 
 ```sudo apt install -y python3-dev
