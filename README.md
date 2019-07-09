@@ -62,6 +62,7 @@ Then to install the library
 
 `sudo python3 setup.py install`
 
+**Install the font and Stats:**
 
 Then create a folder in `/home/pi/` and copy the content of OLED in it
 
