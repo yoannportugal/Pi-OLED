@@ -19,15 +19,6 @@ sudo apt install -y python3-pip
 sudo apt install -y python3-setuptools
 sudo apt install -y python3-rpi.gpio
 ```
-If you are using Python 2 then use these commands instead :
-
-```sudo apt install -y python-dev
-sudo apt install -y python-imaging python-smbus i2c-tools
-sudo apt install -y python-pil
-sudo apt install -y python-pip
-sudo apt install -y python-setuptools
-```
-
 
 **Install OLED Python Library:**
 
