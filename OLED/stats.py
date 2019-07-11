@@ -119,15 +119,18 @@ while True:
     MemUsage = subprocess.check_output(cmd, shell = True ).decode("utf-8")
     cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
     Disk = subprocess.check_output(cmd, shell = True ).decode("utf-8")
+    cmd = "vcgencmd measure_temp | cut -d '=' -f 2 | head --bytes -1"
+    Temperature = subprocess.check_output(cmd, shell = True ).decode("utf-8")
 
     # Write two lines of text.
     draw.text((x, top),        HOST, font=font, fill=255)
-    draw.text((x, top+8),       "IP: " + str(IP), font=font, fill=255)
-    draw.text((x, top+16),     str(CPU), font=font, fill=255)
-    draw.text((x, top+25),    str(MemUsage),  font=font, fill=255)
-    draw.text((x, top+34),    str(Disk),  font=font, fill=255)
+    draw.text((x, top+9),       "IP: " + str(IP), font=font, fill=255)
+    draw.text((x, top+18),     str(CPU), font=font, fill=255)
+    draw.text((x, top+27),    str(MemUsage),  font=font, fill=255)
+    draw.text((x, top+36),    str(Disk),  font=font, fill=255)
+    draw.text((x, top+45), "Temp: " + str(Temperature), font=font, fill=255)
 
     # Display image.
     disp.image(image)
     disp.display()
-    time.sleep(.1)
+    time.sleep(5)
