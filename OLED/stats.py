@@ -121,7 +121,9 @@ while True:
     Disk = subprocess.check_output(cmd, shell = True ).decode("utf-8")
     cmd = "vcgencmd measure_temp | cut -d '=' -f 2 | head --bytes -1"
     Temperature = subprocess.check_output(cmd, shell = True ).decode("utf-8")
-
+    cmd = "uptime -p"
+    UP = subprocess.check_output(cmd, shell = True ).decode("utf-8")
+    
     # Write two lines of text.
     draw.text((x, top),        HOST, font=font, fill=255)
     draw.text((x, top+9),       "IP: " + str(IP), font=font, fill=255)
@@ -129,7 +131,7 @@ while True:
     draw.text((x, top+27),    str(MemUsage),  font=font, fill=255)
     draw.text((x, top+36),    str(Disk),  font=font, fill=255)
     draw.text((x, top+45), "Temp: " + str(Temperature), font=font, fill=255)
-
+    draw.text((x, top+54),   str(UP), font=font, fill=255)
     # Display image.
     disp.image(image)
     disp.display()
